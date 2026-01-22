@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 // Routes
 app.get("/", (req, res) => {
   if (req.session.userId) {
-    return res.redirect("/trips");
+    res.redirect("/trips");
   } else {
     res.render("home");
   }
