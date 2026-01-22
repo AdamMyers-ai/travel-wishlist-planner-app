@@ -30,4 +30,9 @@ router.post("/sign-up", async (req, res) => {
   }
 });
 
+// GET /auth/sign-in
+router.get("/sign-in", (req, res) => {
+  res.render("auth/sign-in");
+});
+
 module.exports = router;
