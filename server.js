@@ -51,7 +51,7 @@ app.use(
 
 // Make session user available in all EJS views
 app.use((req, res, next) => {
-  res.locals.user = req.session.userId;
+  res.locals.user = req.session.user;
   next();
 });
 
@@ -64,8 +64,8 @@ app.get("/", (req, res) => {
   }
 });
 
-app.use(authController);
-app.use(tripsController);
+app.use("/auth", authController);
+app.use("/trips", tripsController);
 
 app.listen(PORT, () =>
   console.log(`Looking for the perfect getaway on Port ${PORT}`),
