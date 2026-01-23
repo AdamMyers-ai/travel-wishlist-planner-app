@@ -16,4 +16,9 @@ router.get("/", isSignedIn, async (req, res) => {
   }
 });
 
+// New - GET /trips/new
+router.get("/new", isSignedIn, (req, res) => {
+  res.render("trips/new");
+});
+
 module.exports = router;
