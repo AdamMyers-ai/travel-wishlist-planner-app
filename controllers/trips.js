@@ -36,7 +36,12 @@ router.post("/", isSignedIn, async (req, res) => {
 
     const currentUser = await User.findById(req.session.user._id);
 
-    currentUser.trips.push(req.body);
+    const tripData = {
+      ...req.body,
+      owner: currentUser._id,
+    };
+
+    currentUser.trips.push(tripData);
     await currentUser.save();
 
     res.redirect("/trips");
