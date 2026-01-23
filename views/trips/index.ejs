@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Trips</title>
+  </head>
+  <body>
+    <%- include("../partials/_navbar.ejs") %>
+
+    <main>
+      <h1>My Trips</h1>
+
+      <% if (trips.length === 0) { %>
+      <p>No trips yet. <a href="/trips/new">Add you first destination</a>.</p>
+      <% } %>
+
+      <section>
+        <% trips.forEach(trip => { %>
+        <article>
+          <h2>
+            <a href="/trips/<%= trip._id %>"><%= trip.destination %></a>
+          </h2>
+          <p>
+            <strong>Status:</strong
+            ><%= trip.status %>
+          </p>
+          <p>
+            <strong>Priority:</strong
+            ><%= trip.priority %>/5
+          </p>
+        </article>
+        <% }); %>
+      </section>
+    </main>
+  </body>
+</html>
