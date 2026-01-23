@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trip.destination</title>
+  </head>
+  <body>
+    <%- include("../partials/_navbar.ejs") %>
+
+    <main>
+      <h1><%= trip.destination %></h1>
+
+      <% if (trip.imageUrl) { %>
+      <img src="<%= trip.imageUrl %>" alt="Image of <%= trip.destination %>" />
+      <% } %>
+
+      <div>
+        <p>
+          <strong>Country:</strong>
+          <%= trip.country || "-" %>
+        </p>
+        <p>
+          <strong>City:</strong>
+          <%= trip.city || "-" %>
+        </p>
+        <p>
+          <strong>Status:</strong>
+          <%= trip.status %>
+        </p>
+        <p>
+          <strong>Priority:</strong>
+          <%= trip.priority %>/5
+        </p>
+        <p>
+          <strong>Budget:</strong>
+          <%= trip.budget ?? "-" %>
+        </p>
+        <p>
+          <strong>Travel Month:</strong>
+          <%= trip.travelMonth || "-" %>
+        </p>
+        <p>
+          <strong>Notes:</strong>
+          <%= trip.notes || "-" %>
+        </p>
+      </div>
+
+      <div>
+        <a href="/trips/<%= trip._id %>/edit">Edit</a>
+
+        <form action="/trips/<%= trip._id %>?_method=DELETE" method="post">
+          <button type="submit">Delete</button>
+        </form>
+
+        <a href="/trips">Back</a>
+      </div>
+    </main>
+  </body>
+</html>

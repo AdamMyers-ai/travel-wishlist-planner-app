@@ -11,6 +11,10 @@
     <main>
       <h1>Add a Trip</h1>
 
+      <% if (message) { %>
+      <p class="error"><%= message %></p>
+      <% } %>
+
       <form action="/trips" method="post">
         <label for="destination">Destination:</label>
         <input type="text" name="destination" id="destination" required />

@@ -55,7 +55,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Error message handling
+// message available everywhere
 app.use((req, res, next) => {
   res.locals.message = req.session.message;
   req.session.message = null;
