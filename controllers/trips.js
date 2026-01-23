@@ -55,4 +55,21 @@ router.post("/", isSignedIn, async (req, res) => {
   }
 });
 
+// Show - GET /trips/:tripId
+router.get("/:tripId", isSignedIn, async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const trip = currentUser.trips.id(req.params.tripId);
+
+    if (!trip) return res.redirect("/trips");
+
+    res.render("trips/show", {
+      trip,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
 module.exports = router;
