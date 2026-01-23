@@ -11,11 +11,19 @@
     <main>
       <h1>Travel Wishlist Planner</h1>
 
-      <p>Create your travel wishlist, set priority/budget and track trips.</p>
+      <p>
+        Save destinations, set a priority & budget, and track trips from
+        wishlist → planned → visited.
+      </p>
 
-      <a href="/auth/sign-up">
-        <button type="button">Get Started</button>
-      </a>
+      <% if(!user){ %>
+      <div class="row">
+        <a href="/auth/sign-up" class="btn">Get Started</a>
+        <a href="/auth/sign-in" class="btn-secondary">Sign In</a>
+      </div>
+      <% } else { %>
+      <a href="/trips" class="btn">Go to My Trips</a>
+      <% } %>
     </main>
   </body>
 </html>
