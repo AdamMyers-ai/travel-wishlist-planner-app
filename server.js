@@ -55,6 +55,13 @@ app.use((req, res, next) => {
   next();
 });
 
+// Error message handling
+app.use((req, res, next) => {
+  res.locals.message = req.session.message;
+  req.session.message = null;
+  next();
+});
+
 // Routes
 app.get("/", (req, res) => {
   res.render("home");
