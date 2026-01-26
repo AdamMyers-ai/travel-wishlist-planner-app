@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= trip.destination %></title>
+  </head>
+  <body>
+    <%- include("../partials/_navbar.ejs") %>
+
+    <main>
+      <h1>Edit Trip</h1>
+
+      <% if (message) { %>
+      <p class="error"><%= message %></p>
+      <% } %>
+
+      <form action="/trips/<%= trip._id %>?_method=PUT" method="post">
+        <label for="destination">Destination *</label>
+        <input
+          type="text"
+          name="destination"
+          id="destination"
+          required
+          value="<%= trip.destination %>"
+        />
+
+        <label for="country">Country:</label>
+        <input
+          type="text"
+          name="country"
+          id="country"
+          value="<%= trip.country || '' %>"
+        />
+
+        <label for="city">City:</label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          value="<%= trip.city || '' %>"
+        />
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+          <% if (trip.status === 'wishlist') { %>
+          <option value="wishlist" selected>Wishlist</option>
+          <% } else { %>
+          <option value="wishlist">Wishlist</option>
+          <% } %>
+
+          <% if (trip.status === 'planned') { %>
+          <option value="planned" selected>Planned</option>
+          <% } else { %>
+          <option value="planned">Planned</option>
+          <% } %>
+
+          <% if (trip.status === 'visited') { %>
+          <option value="visited" selected>Visited</option>
+          <% } else { %>
+          <option value="visited">Visited</option>
+          <% } %>
+        </select>
+
+        <label for="priority">Priority (1-5):</label>
+        <input
+          type="number"
+          name="priority"
+          id="priority"
+          min="1"
+          max="5"
+          value="<%= trip.priority %>"
+        />
+
+        <label for="budget">Budget:</label>
+        <input
+          type="number"
+          name="budget"
+          id="budget"
+          min="0"
+          value="<%= trip.budget ?? '' %>"
+        />
+
+        <label for="travelMonth">Travel Month:</label>
+        <input
+          type="text"
+          name="travelMonth"
+          id="travelMonth"
+          value="<%= trip.travelMonth || '' %>"
+        />
+
+        <label for="imageUrl">Image URL:</label>
+        <input
+          type="text"
+          name="imageUrl"
+          id="imageUrl"
+          value="<%= trip.imageUrl || '' %>"
+        />
+
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notes" rows="4"><%= trip.notes %></textarea>
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </main>
+  </body>
+</html>

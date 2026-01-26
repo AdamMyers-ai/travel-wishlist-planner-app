@@ -71,5 +71,5 @@ app.use("/auth", authController);
 app.use("/trips", tripsController);
 
 app.listen(PORT, () =>
-  console.log(`Looking for the perfect getaway on Port ${PORT}`),
+  console.log(`Searching for the perfect getaway on Port ${PORT}`),
 );
