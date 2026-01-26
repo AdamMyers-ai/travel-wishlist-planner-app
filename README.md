@@ -5,8 +5,9 @@ Travel Wishlist Planner is a full-stack CRUD app that allows users to create an 
 ---
 
 ## Screenshots
-![App Screenshot](./public/images/screenshot.png)
-![App Screenshot](./public/images/screenshot2.png)
+![App Screenshot Home](./public/images/screenshot.png)
+![App Screenshot Show](./public/images/screenshot2.png)
+![App Screenshot Edit](./public/images/screenshot3.png)
 
 ---
 
