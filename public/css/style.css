@@ -69,3 +69,19 @@ a:hover {
   display: inline;
   margin: 0;
 }
+
+/* Titles / Text */
+h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.5;
+}
