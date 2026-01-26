@@ -21,7 +21,6 @@ body {
   color: #111827;
 }
 
-
 a {
   color: inherit;
   text-decoration: none;
@@ -29,4 +28,11 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 24px;
 }
