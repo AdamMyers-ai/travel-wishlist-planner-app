@@ -8,58 +8,46 @@
   <body>
     <%- include("../partials/_navbar.ejs") %>
 
-    <main>
+    <main class="container">
       <h1>Add a Trip</h1>
 
       <% if (message) { %>
       <p class="error"><%= message %></p>
       <% } %>
 
-      <form action="/trips" method="post">
-        <label for="destination">Destination:</label>
-        <input type="text" name="destination" id="destination" required />
+      <form action="/trips" method="post" class="card">
+        <label for="destination">Destination *</label>
+        <input type="text" name="destination" required />
 
-        <label for="country">Country:</label>
-        <input type="text" name="country" id="country" />
+        <label for="country">Country</label>
+        <input type="text" name="country" />
 
-        <label for="city">City:</label>
-        <input type="text" name="city" id="city" />
+        <label for="city">City</label>
+        <input type="text" name="city" />
 
-        <label for="status">Status:</label>
-        <select name="status" id="status">
+        <label for="status">Status</label>
+        <select name="status">
           <option value="wishlist">Wishlist</option>
           <option value="planned">Planned</option>
           <option value="visited">Visited</option>
         </select>
 
         <label for="priority">Priority (1-5)</label>
-        <input
-          type="number"
-          name="priority"
-          id="priority"
-          min="1"
-          max="5"
-          value="3"
-        />
+        <input type="number" name="priority" min="1" max="5" value="3" />
 
-        <label for="budget">Budget:</label>
-        <input type="number" name="budget" id="budget" min="0" />
+        <label for="budget">Budget</label>
+        <input type="number" name="budget" min="0" />
 
-        <label for="travel-month">Travel Month:</label>
-        <input
-          type="text"
-          name="travel-month"
-          id="travel-month"
-          placeholder="e.g. July 2026"
-        />
+        <label for="travelMonth">Travel Month</label>
+        <input type="text" name="travelMonth" placeholder="e.g. July 2026" />
 
-        <label for="image-url">Image URL:</label>
-        <input type="text" name="image-url" id="image-url" />
+        <label for="imageUrl">Image URL</label>
+        <input name="imageUrl" placeholder="https://..." />
 
-        <label for="notes">Notes:</label>
-        <textarea name="notes" id="notes" rows="4"></textarea>
+        <label for="notes">Notes</label>
+        <textarea name="notes" rows="4"></textarea>
 
-        <button type="submit">Create Trip</button>
+        <button class="btn" type="submit">Create Trip</button>
       </form>
     </main>
   </body>
