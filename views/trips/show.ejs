@@ -54,11 +54,11 @@
       <div class="row">
         <a class="btn" href="/trips/<%= trip._id %>/edit">Edit</a>
 
-        <form action="/trips/<%= trip._id %>?_method=DELETE" method="post">
-          <button class="btn-danger" type="submit">Delete</button>
-        </form>
+        <a class="btn" href="/trips">Back</a>
 
-        <a class="btn-secondary" href="/trips">Back</a>
+        <form action="/trips/<%= trip._id %>?_method=DELETE" method="post">
+          <button class="btn" type="submit">Delete</button>
+        </form>
       </div>
     </main>
   </body>
