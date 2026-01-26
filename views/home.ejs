@@ -8,7 +8,7 @@
   <body>
     <%- include("partials/_navbar.ejs") %>
 
-    <main>
+    <main class="container">
       <h1>Travel Wishlist Planner</h1>
 
       <p>
@@ -18,11 +18,11 @@
 
       <% if(!user){ %>
       <div class="row">
-        <a href="/auth/sign-up" class="btn">Get Started</a>
-        <a href="/auth/sign-in" class="btn-secondary">Sign In</a>
+        <a class="btn" href="/auth/sign-up">Get Started</a>
+        <a class="btn-secondary" href="/auth/sign-in">Sign In</a>
       </div>
       <% } else { %>
-      <a href="/trips" class="btn">Go to My Trips</a>
+      <a class="btn" href="/trips">Go to My Trips</a>
       <% } %>
     </main>
   </body>
