@@ -43,3 +43,13 @@ a:hover {
   align-items: center;
   flex-wrap: wrap;
 }
+
+/* Navbar */
+.nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
