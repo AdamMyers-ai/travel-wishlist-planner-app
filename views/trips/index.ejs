@@ -8,7 +8,7 @@
   <body>
     <%- include("../partials/_navbar.ejs") %>
 
-    <main>
+    <main class="container">
       <h1>My Trips</h1>
 
       <% if (message) { %>
@@ -19,9 +19,9 @@
       <p>No trips yet. <a href="/trips/new">Add you first destination</a>.</p>
       <% } %>
 
-      <section>
+      <section class="grid">
         <% trips.forEach(trip => { %>
-        <article>
+        <article class="card">
           <h2>
             <a href="/trips/<%= trip._id %>"><%= trip.destination %></a>
           </h2>
