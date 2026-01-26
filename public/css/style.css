@@ -85,3 +85,16 @@ h2 {
 p {
   line-height: 1.5;
 }
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.06);
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+}
