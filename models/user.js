@@ -38,6 +38,10 @@ const tripSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    notes: {
+      type: String,
+      trim: true,
+    },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

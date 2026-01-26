@@ -89,6 +89,55 @@ router.get("/:tripId/edit", isSignedIn, async (req, res) => {
   }
 });
 
+// Update - PUT /trips/:tripId
+router.put("/:tripId", isSignedIn, async (req, res) => {
+  const {
+    destination,
+    country,
+    city,
+    status,
+    priority,
+    budget,
+    travelMonth,
+    imageUrl,
+    notes,
+  } = req.body;
+
+  try {
+    if (!destination || !destination.trim()) {
+      throw new Error("Please provide a valid destination.");
+    }
+
+    const currentUser = await User.findById(req.session.user._id);
+    const trip = currentUser.trips.id(req.params.tripId);
+
+    if (!trip) return res.redirect("/trips");
+
+    trip.set({
+      destination: destination.trim(),
+      country,
+      city,
+      status,
+      priority,
+      budget,
+      travelMonth,
+      imageUrl,
+      notes,
+    });
+
+    await currentUser.save();
+
+    res.redirect(`/trips/${trip._id}`);
+  } catch (error) {
+    console.log(error);
+    req.session.message = error.message;
+
+    req.session.save(() => {
+      res.redirect(`/trips/${req.params.tripId}/edit`);
+    });
+  }
+});
+
 // Delete - DELETE /trips/:tripId
 router.delete("/:tripId", isSignedIn, async (req, res) => {
   try {
