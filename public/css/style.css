@@ -59,3 +59,13 @@ a:hover {
   border-radius: 10px;
   font-weight: 600;
 }
+
+.nav a:hover {
+  background: #f3f4f6;
+  text-decoration: none;
+}
+
+.inline-form {
+  display: inline;
+  margin: 0;
+}
