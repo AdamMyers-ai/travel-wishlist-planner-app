@@ -53,3 +53,9 @@ a:hover {
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
 }
+
+.nav a {
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
