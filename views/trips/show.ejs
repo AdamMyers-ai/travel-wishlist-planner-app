@@ -8,14 +8,18 @@
   <body>
     <%- include("../partials/_navbar.ejs") %>
 
-    <main>
+    <main class="container">
       <h1><%= trip.destination %></h1>
 
       <% if (trip.imageUrl) { %>
-      <img src="<%= trip.imageUrl %>" alt="Image of <%= trip.destination %>" />
+      <img
+        class="hero"
+        src="<%= trip.imageUrl %>"
+        alt="Image of <%= trip.destination %>"
+      />
       <% } %>
 
-      <div>
+      <div class="card">
         <p>
           <strong>Country:</strong>
           <%= trip.country || "-" %>
@@ -46,14 +50,14 @@
         </p>
       </div>
 
-      <div>
-        <a href="/trips/<%= trip._id %>/edit">Edit</a>
+      <div class="row">
+        <a class="btn" href="/trips/<%= trip._id %>/edit">Edit</a>
 
         <form action="/trips/<%= trip._id %>?_method=DELETE" method="post">
-          <button type="submit">Delete</button>
+          <button class="btn-danger" type="submit">Delete</button>
         </form>
 
-        <a href="/trips">Back</a>
+        <a class="btn-secondary" href="/trips">Back</a>
       </div>
     </main>
   </body>
